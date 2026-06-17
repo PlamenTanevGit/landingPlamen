@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plamen Tanev — Links</title>
+<meta name="description" content="All my channels in one place." />
+
+<!-- ============================================================= -->
+<!--  Social preview (shows when the link is pasted in chats etc.) -->
+<!-- ============================================================= -->
+<meta property="og:title" content="Plamen Tanev" />
+<meta property="og:description" content="Senior QA Automation Engineer — all my channels in one place." />
+<meta property="og:type" content="profile" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  /* =====================================================
+     DESIGN TOKENS
+     ===================================================== */
+  :root{
+    --ink:        #14171d;   /* primary text / surfaces        */
+    --ink-soft:   #3a4150;   /* secondary text                 */
+    --muted:      #79818f;   /* captions, mono labels          */
+    --paper:      #f4f5f2;   /* page background                */
+    --card:       #ffffff;   /* row + card surface             */
+    --line:       #e6e7e2;   /* hairlines                      */
+    --pass:       #1fae62;   /* "passing" green signal         */
+    --signal:     #2f5bea;   /* interaction / focus accent     */
+    --radius:     16px;
+    --row-gap:    10px;
+    --maxw:       460px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ -webkit-text-size-adjust:100%; }
+
+  body{
+    font-family:"Inter", system-ui, sans-serif;
+    background:
+      radial-gradient(120% 70% at 50% -10%, #fbfcfa 0%, var(--paper) 55%, #eceee8 100%);
+    color:var(--ink);
+    min-height:100dvh;
+    display:flex;
+    justify-content:center;
+    padding:32px 18px 40px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .shell{
+    width:100%;
+    max-width:var(--maxw);
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* =====================================================
+     HEADER
+     ===================================================== */
+  .head{
+    text-align:center;
+    margin-bottom:26px;
+  }
+
+  .avatar-wrap{
+    position:relative;
+    width:96px; height:96px;
+    margin:0 auto 16px;
+  }
+  .avatar{
+    width:96px; height:96px;
+    border-radius:50%;
+    object-fit:cover;
+    background:
+      linear-gradient(135deg,#222833,#0e1116);
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff;
+    font-family:"Bricolage Grotesque", sans-serif;
+    font-weight:700; font-size:34px;
+    letter-spacing:.5px;
+    box-shadow:0 10px 30px -12px rgba(20,23,29,.45);
+  }
+  /* online / verified dot */
+  .status-dot{
+    position:absolute;
+    right:4px; bottom:4px;
+    width:18px; height:18px;
+    background:var(--pass);
+    border:3px solid var(--paper);
+    border-radius:50%;
+  }
+
+  .name{
+    font-family:"Bricolage Grotesque", sans-serif;
+    font-weight:700;
+    font-size:28px;
+    line-height:1.05;
+    letter-spacing:-.01em;
+  }
+  .role{
+    margin-top:7px;
+    font-size:15px;
+    color:var(--ink-soft);
+    font-weight:500;
+  }
+  .meta{
+    margin-top:12px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:11.5px;
+    letter-spacing:.04em;
+    color:var(--muted);
+    text-transform:uppercase;
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .meta .pip{ color:var(--pass); }
+
+  /* =====================================================
+     LINK ROWS  (the signature: "verified channels")
+     ===================================================== */
+  .channels{
+    display:flex;
+    flex-direction:column;
+    gap:var(--row-gap);
+  }
+
+  .row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px 16px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    text-decoration:none;
+    color:inherit;
+    position:relative;
+    transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    box-shadow:0 1px 0 rgba(20,23,29,.02);
+  }
+  .row:hover{
+    transform:translateY(-2px);
+    border-color:#d4d6cf;
+    box-shadow:0 14px 26px -16px rgba(20,23,29,.4);
+  }
+  .row:focus-visible{
+    outline:2.5px solid var(--signal);
+    outline-offset:3px;
+  }
+
+  .icon{
+    flex:0 0 auto;
+    width:40px; height:40px;
+    border-radius:11px;
+    background:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .icon svg{ width:20px; height:20px; fill:#fff; }
+
+  .body{ flex:1 1 auto; min-width:0; }
+  .tag{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:10px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .label{
+    font-family:"Bricolage Grotesque", sans-serif;
+    font-weight:700;
+    font-size:16.5px;
+    line-height:1.15;
+  }
+  .handle{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  /* the passing check on the right */
+  .check{
+    flex:0 0 auto;
+    width:22px; height:22px;
+    border-radius:50%;
+    border:1.5px solid var(--pass);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .check svg{ width:12px; height:12px; stroke:var(--pass); fill:none; stroke-width:2.4; }
+
+  /* =====================================================
+     FOOTER
+     ===================================================== */
+  .foot{
+    margin-top:24px;
+    text-align:center;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:11px;
+    letter-spacing:.04em;
+    color:var(--muted);
+    line-height:1.7;
+  }
+  .foot a{ color:var(--ink-soft); text-decoration:none; border-bottom:1px solid var(--line); }
+  .foot a:hover{ color:var(--signal); border-color:var(--signal); }
+
+  /* =====================================================
+     LOAD ANIMATION  ("test suite running green")
+     ===================================================== */
+  @media (prefers-reduced-motion:no-preference){
+    .head, .row{ opacity:0; transform:translateY(10px); animation:rise .5s cubic-bezier(.2,.7,.2,1) forwards; }
+    .head{ animation-delay:.02s; }
+    .check{ transform:scale(0); animation:pop .35s cubic-bezier(.3,1.4,.5,1) forwards; }
+    @keyframes rise{ to{ opacity:1; transform:none; } }
+    @keyframes pop { to{ transform:scale(1); } }
+  }
+</style>
+</head>
+<body>
+  <main class="shell">
+    <header class="head" id="head"></header>
+    <nav class="channels" id="channels" aria-label="My links"></nav>
+    <footer class="foot" id="foot"></footer>
+  </main>
+
+<script>
+/* =================================================================
+   EDIT EVERYTHING HERE  ·  one object, no other code to touch
+   -----------------------------------------------------------------
+   - Replace the urls / handles with your real ones.
+   - Delete any link block you don't want, or copy one to add more.
+   - "tag" is the little uppercase label (what the channel is for).
+   - "icon" must be one of the keys in ICONS below.
+   - To use a real photo: set photo to "your-image.jpg" (same folder)
+     or a full https URL. Leave it "" to show your initials instead.
+   ================================================================= */
+const PROFILE = {
+  name:     "Plamen Tanev",
+  initials: "PT",
+  role:     "Senior QA Automation Engineer",
+  photo:    "",                 // e.g. "me.jpg"  — empty = initials
+  location: "Varna, Bulgaria",
+  status:   "Open to connect",
+
+  links: [
+    { tag:"work",   label:"LinkedIn",  handle:"in/your-handle",        url:"https://linkedin.com/in/your-handle", icon:"linkedin" },
+    { tag:"code",   label:"GitHub",    handle:"github.com/yourhandle", url:"https://github.com/yourhandle",       icon:"github"   },
+    { tag:"social", label:"Instagram", handle:"@yourhandle",           url:"https://instagram.com/yourhandle",    icon:"instagram"},
+    { tag:"social", label:"Facebook",  handle:"facebook.com/you",      url:"https://facebook.com/yourhandle",     icon:"facebook" },
+    { tag:"chat",   label:"Viber",     handle:"chat with me",          url:"viber://chat?number=%2B359XXXXXXXXX",  icon:"viber"    },
+    { tag:"mail",   label:"Email",     handle:"you@example.com",       url:"mailto:you@example.com",              icon:"mail"     },
+  ],
+
+  footer: "Built once · share everywhere",
+};
+
+/* ---- inline icons (no external dependencies) ---- */
+const ICONS = {
+  linkedin: '<svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>',
+  github:   '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>',
+  instagram:'<svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.42.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23a3.7 3.7 0 01-.9 1.38c-.42.42-.82.68-1.38.9-.42.17-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.17-.42-.37-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.17 1.06-.37 2.23-.42C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5.01-4.74.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.21 8.5 3.2 8.85 3.2 12s.01 3.5.07 4.74c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 00-.68-1.06 2.85 2.85 0 00-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.5 4.01 15.15 4 12 4zm0 3.07a4.93 4.93 0 110 9.86 4.93 4.93 0 010-9.86zm0 1.8a3.13 3.13 0 100 6.26 3.13 3.13 0 000-6.26zm5.13-.93a1.15 1.15 0 110 2.3 1.15 1.15 0 010-2.3z"/></svg>',
+  facebook: '<svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0022 12z"/></svg>',
+  viber:    '<svg viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5 4 9.3c0 1.9.7 3.6 1.9 5l-.9 3.2 3.3-.9c1.1.5 2.3.8 3.7.8 4.4 0 8-3 8-7.1S16.4 2 12 2zm4.5 9.7c-.2.5-1 .9-1.5 1-.4.1-.9.1-1.5-.1-.3-.1-.8-.3-1.4-.5-2.4-1-4-3.4-4.1-3.6-.1-.2-1-1.3-1-2.5s.6-1.7.8-2c.2-.2.5-.3.6-.3h.5c.1 0 .3 0 .5.4l.7 1.6c.1.1.1.3 0 .4l-.2.3-.3.3c-.1.1-.2.2-.1.4.1.2.5.9 1.1 1.4.8.7 1.4.9 1.6 1 .2.1.3.1.4-.1l.6-.7c.1-.2.3-.1.5-.1l1.5.7c.2.1.3.2.4.2.1.2.1.6-.1 1z"/></svg>',
+  mail:     '<svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.3 7h15.4L12 12.2zM4 8.5V17h16V8.5l-7.4 5.1a1 1 0 01-1.2 0L4 8.5z"/></svg>',
+  globe:    '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.9 6h-2.95a15.7 15.7 0 00-1.38-3.56A8.03 8.03 0 0118.9 8zM12 4c.83 1.2 1.48 2.53 1.91 4h-3.82c.43-1.47 1.08-2.8 1.91-4zM4.26 14a7.96 7.96 0 010-4h3.38a16.5 16.5 0 000 4H4.26zm.84 2h2.95c.34 1.3.82 2.5 1.38 3.56A8.03 8.03 0 015.1 16zm2.95-8H5.1a8.03 8.03 0 014.33-3.56A15.7 15.7 0 008.05 8zM12 20c-.83-1.2-1.48-2.53-1.91-4h3.82A13.6 13.6 0 0112 20zm2.36-6H9.64a14.5 14.5 0 010-4h4.72a14.5 14.5 0 010 4zm.59 5.56c.56-1.06 1.04-2.26 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14a16.5 16.5 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"/></svg>',
+};
+
+const CHECK = '<svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"></polyline></svg>';
+
+/* ---- render ---- */
+(function render(){
+  // header
+  const avatar = PROFILE.photo
+    ? `<img class="avatar" src="${PROFILE.photo}" alt="${PROFILE.name}" />`
+    : `<div class="avatar" role="img" aria-label="${PROFILE.name}">${PROFILE.initials}</div>`;
+
+  document.getElementById("head").innerHTML = `
+    <div class="avatar-wrap">
+      ${avatar}
+      <span class="status-dot" aria-hidden="true"></span>
+    </div>
+    <h1 class="name">${PROFILE.name}</h1>
+    <p class="role">${PROFILE.role}</p>
+    <p class="meta">
+      <span>${PROFILE.location}</span>
+      <span class="pip">●</span>
+      <span>${PROFILE.status}</span>
+    </p>`;
+
+  // links
+  document.getElementById("channels").innerHTML = PROFILE.links.map((l, i) => `
+    <a class="row" href="${l.url}" target="_blank" rel="noopener noreferrer"
+       style="animation-delay:${0.08 + i * 0.06}s"
+       aria-label="${l.label} — ${l.handle}">
+      <span class="icon">${ICONS[l.icon] || ICONS.globe}</span>
+      <span class="body">
+        <span class="tag">${l.tag}</span>
+        <span class="label">${l.label}</span>
+        <span class="handle">${l.handle}</span>
+      </span>
+      <span class="check" style="animation-delay:${0.35 + i * 0.06}s" aria-hidden="true">${CHECK}</span>
+    </a>`).join("");
+
+  // footer
+  document.getElementById("foot").innerHTML = `${PROFILE.footer}`;
+})();
+</script>
+</body>
+</html> 	
